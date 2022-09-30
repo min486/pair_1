@@ -3,8 +3,8 @@
 {% block content %}
 <a href="{% url 'movie:review' %}">리뷰 작성</a>
 
-<input type="text" name="content_" maxlength="80">
-<input type="submit" value="입력">
+<!-- <input type="text" name="content_" maxlength="80">
+<input type="submit" value="입력"> -->
 
 
 <table class="table">
@@ -16,23 +16,20 @@
     </tr>
   </thead>
   <tbody>
+    {% for movie in movies %}
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
+      <td>{{ movie.pk }}</td>
+      <td>
+        <a href="{% url 'movie:detail' movie.pk %}">
+          
+          {{ movie.title }}
+        </a>
+      </td>
+      <td>{{ movie.content }}</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-    </tr>
+    {% endfor %}
   </tbody>
 </table>
-
 
 
 {% endblock content %}

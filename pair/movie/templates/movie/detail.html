@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div>
+  <div>
+    {{ pk.title }}
+  </div>
+  <div>
+    {{ pk.content }}
+  </div>
+  <div>
+    {{ pk.created_at }}
+  </div>
+  <a href="">리뷰 수정</a>
+  <a href="">리뷰 삭제</a>
+</div>
+<!-- {% for movie in movies %}
+
+  {{ movie.title }}
+  {{ movie.text }}
+
+{% endfor %} -->
+
+{% endblock content %}

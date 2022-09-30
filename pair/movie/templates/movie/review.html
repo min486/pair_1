@@ -3,15 +3,15 @@
 {% block content %}
 <form action="{% url 'movie:create' %}">
   <div class="mb-3">
-    <label class="form-label">Email address</label>
+    <label class="form-label">제목</label>
     <input type="text" class="form-control" name="title_">
   </div>
   <div class="mb-3">
-    <label class="form-label">Example textarea</label>
+    <label class="form-label">내용</label>
     <textarea class="form-control" name="textarea_" rows="3"></textarea>
   </div>
   <div class="my-3">
-    <button type="submit" class="btn btn-secondary w-100">할 일 추가</button>
+    <button type="submit" class="btn btn-secondary w-100">리뷰 쓰기</button>
   </div>
 </form>
 

@@ -8,19 +8,27 @@ def index(request):
     _movie = Review.objects.all()
 
     context = {
-        "movie": _movie,
+        "movies": _movie,
     }
     return render(request, "movie/index.html", context)
 
 
 def create(request):
-    content = request.GET.get("content_")
     title = request.GET.get("title_")
     textarea = request.GET.get("textarea_")
 
-    Review.object.create(title=title, content=textarea)
+    Review.objects.create(title=title, content=textarea)
 
     return redirect("movie:index")
 
 def review(request):
     return render(request, "movie/review.html")
+
+def detail(request, movie_pk):
+    pk_ = Review.objects.get(pk = movie_pk)
+
+    context = {
+        "pk": pk_
+    }
+
+    return render(request, "movie/detail.html", context)
