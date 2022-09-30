@@ -1,35 +1,39 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<a href="{% url 'movie:review' %}">리뷰 작성</a>
 
-<!-- <input type="text" name="content_" maxlength="80">
-<input type="submit" value="입력"> -->
+<div style="height: 25rem;">
+  <img class="w-100 h-100" src="{% static 'review.png' %}" alt="">
+</div>
 
-
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">리뷰 번호</th>
-      <th scope="col">리뷰 제목</th>
-      <th scope="col">작성 시간</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for movie in movies %}
-    <tr>
-      <td>{{ movie.pk }}</td>
-      <td>
-        <a href="{% url 'movie:detail' movie.pk %}">
-
-          {{ movie.title }}
-        </a>
-      </td>
-      <td>{{ movie.content }}</td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
-
+<div class="container">
+  <form action="{% url 'movie:review' %}" class="my-3">
+    <button type="submit" class="btn btn-outline-dark">리뷰 작성</button>
+  </form>
+  
+  <table class="table">
+    <thead>
+      <tr class="table-dark">
+        <th scope="col">리뷰 번호</th>
+        <th scope="col">리뷰 제목</th>
+        <th scope="col">작성 시간</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for movie in movies %}
+      <tr>
+        <td>{{ movie.pk }}</td>
+        <td>
+          <a href="{% url 'movie:detail' movie.pk %}" style="color: #FF74B1; font-size: 1.3rem;">
+            {{ movie.title }}
+          </a>
+        </td>
+        <td>{{ movie.created_at }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
 
 {% endblock content %}

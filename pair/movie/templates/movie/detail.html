@@ -2,18 +2,18 @@
 
 {% block content %}
 
-<div>
-  <div>
-    <h1>제목: {{ pk.title }}</h1>
-  </div>
-  <div>
-    <p>{{ pk.content }}</p>
-  </div>
-  <div>
-    {{ pk.created_at }}
-  </div>
-  <a href="{% url 'movie:edit' %}">리뷰 수정</a>
-  <a href="">리뷰 삭제</a>
+<div class="container my-5 text-center">
+  <h1>제목: {{ pk.title }}</h1>
+  <div>{{ pk.content }}</div>
+  <div class="mt-5">{{ pk.created_at }}</div>
+
+  <form action="{% url 'movie:update' pk.pk %}" class="my-3">
+    <button type="submit" class="btn btn-outline-dark">리뷰 수정</button>
+  </form>
+  
+  <form action="{% url 'movie:delete' pk.pk %}" class="my-3">
+    <button type="submit" class="btn btn-outline-dark">리뷰 삭제</button>
+  </form>
 </div>
 
 {% endblock content %}
