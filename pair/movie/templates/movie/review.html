@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+{% block content %}
 
-<body>
-  리뷰
-</body>
+<div class="mb-3">
+  <label class="form-label">Email address</label>
+  <input type="text" class="form-control" name="">
+</div>
+<div class="mb-3">
+  <label class="form-label">Example textarea</label>
+  <textarea class="form-control" name="" rows="3"></textarea>
+</div>
+<div class="my-3">
+  <button type="submit" class="btn btn-secondary w-100">할 일 추가</button>
+</div>
 
-</html>
+{% endblock content %}

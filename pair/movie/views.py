@@ -19,3 +19,6 @@ def create(request):
     Review.object.create(content=content)
 
     return redirect("movie:index")
+
+def review(request):
+    return render(request, "movie/review.html")
