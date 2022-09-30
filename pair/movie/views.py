@@ -32,3 +32,8 @@ def detail(request, movie_pk):
     }
 
     return render(request, "movie/detail.html", context)
+
+def edit(request):
+
+    return redirect("movie:edit.html")
+

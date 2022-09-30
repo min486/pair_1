@@ -4,22 +4,16 @@
 
 <div>
   <div>
-    {{ pk.title }}
+    <h1>제목: {{ pk.title }}</h1>
   </div>
   <div>
-    {{ pk.content }}
+    <p>{{ pk.content }}</p>
   </div>
   <div>
     {{ pk.created_at }}
   </div>
-  <a href="">리뷰 수정</a>
+  <a href="{% url 'movie:edit' %}">리뷰 수정</a>
   <a href="">리뷰 삭제</a>
 </div>
-<!-- {% for movie in movies %}
-
-  {{ movie.title }}
-  {{ movie.text }}
-
-{% endfor %} -->
 
 {% endblock content %}
