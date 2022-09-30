@@ -1,17 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<div class="mb-3">
-  <label class="form-label">Email address</label>
-  <input type="text" class="form-control" name="">
-</div>
-<div class="mb-3">
-  <label class="form-label">Example textarea</label>
-  <textarea class="form-control" name="" rows="3"></textarea>
-</div>
-<div class="my-3">
-  <button type="submit" class="btn btn-secondary w-100">할 일 추가</button>
-</div>
+<form action="{% url 'movie:create' %}">
+  <div class="mb-3">
+    <label class="form-label">Email address</label>
+    <input type="text" class="form-control" name="title_">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Example textarea</label>
+    <textarea class="form-control" name="textarea_" rows="3"></textarea>
+  </div>
+  <div class="my-3">
+    <button type="submit" class="btn btn-secondary w-100">할 일 추가</button>
+  </div>
+</form>
 
 {% endblock content %}

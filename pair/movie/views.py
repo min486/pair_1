@@ -15,8 +15,10 @@ def index(request):
 
 def create(request):
     content = request.GET.get("content_")
+    title = request.GET.get("title_")
+    textarea = request.GET.get("textarea_")
 
-    Review.object.create(content=content)
+    Review.object.create(title=title, content=textarea)
 
     return redirect("movie:index")
 
